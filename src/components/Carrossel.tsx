@@ -21,6 +21,7 @@ export default function Carrossel() {
   
   const settings = {
     accessibility:true,
+    adaptiveHeight: true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -33,9 +34,9 @@ export default function Carrossel() {
       <div className="w-3/4 max-w-[700px] m-auto pt-10 pb-10">
         <Slider {...settings}>
           {informacoes.map((i, index) => (
-            <div key={index} className="bg-white text-black h-[320px] rounded-xl justify-center items-center">
-              <h2 className='pt-4 font-bold text-lg flex justify-center'>{i.titulo}</h2>
-              <p className='p-4 justify-center text-justify indent-0.5'>{i.texto}</p>
+            <div key={index} className="h-52 overflow-hidden bg-white text-black rounded-xl justify-center items-center">
+              <h2 className='pt-2 sm:pt-4 font-bold text-sm sm:text-lg flex justify-center'>{i.titulo}</h2>
+              <p className='p-2 sm:p-4 justify-center text-justify'>{i.texto}</p>
             </div>
           ))}
         </Slider>
